@@ -1,0 +1,69 @@
+/*
+Travel Verdict Print Stylesheet
+*/
+
+@media print {
+
+    /* --- General Print Resets --- */
+    body {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 12pt;
+        color: #000;
+        background: #fff;
+    }
+
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    /* Show the href for links in parenthesis after the link text */
+    .entry-content a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    /* --- Hide Unnecessary Elements --- */
+    #masthead,
+    #colophon,
+    .reading-progress-bar,
+    .entry-footer,
+    #comments-section,
+    .author-box,
+    .post-navigation,
+    .suggested-posts-section,
+    #back-to-top,
+    .comment-form,
+    .entry-header-tools {
+        display: none !important;
+    }
+
+    /* --- Style Remaining Content for Print --- */
+    .content-area,
+    .site-main,
+    .entry-content-wrapper {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .post-thumbnail-single {
+        max-width: 50%;
+        margin: 0 auto 20px;
+    }
+
+    .entry-header-single {
+        text-align: left;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #000;
+    }
+
+    /* Avoid page breaks inside a figure or after a heading */
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+    }
+
+    figure, img, blockquote {
+        page-break-inside: avoid;
+    }
+}
